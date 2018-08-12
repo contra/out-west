@@ -49,8 +49,6 @@ export default class Player extends PureComponent {
   jump = () => {
     this.jumpNoise.play()
     this.setPlayerState({ isJumping: true })
-    Matter.Body.applyForce(this.body, { x: 0, y: 0 }, { x: 0, y: -0.15 })
-    Matter.Body.set(this.body, 'friction', 0.0001)
   }
   punch = () => {
     this.punchNoise.play()
@@ -62,13 +60,9 @@ export default class Player extends PureComponent {
 
     // react to key states
     if (isControllable) this.checkKeys()
-
-    // manage jump state
-    const velY = parseFloat(body.velocity.y.toFixed(10))
-    if (velY === 0) Matter.Body.set(body, 'friction', 0.9999)
   }
   render() {
-    return <Body args={[0,0,75,75]} ref={(b) => this.body = b.body}>
+    return <Body args={[ 0, 0, 75, 75 ]} ref={(b) => this.body = b.body}>
 
     </Body>
   }
