@@ -18,7 +18,7 @@ export default class Navigation extends PureComponent {
         a {
           color: inherit !important;
           text-decoration: none;
-          margin-right: 16px;
+          margin-right: 32px;
         }
         a:last-child {
           margin-right: 0;

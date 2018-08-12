@@ -7,7 +7,10 @@ export default class Game extends PureComponent {
   state = {
     players: []
   }
-  renderPlayers() {
+  initialize = () => {
+    // TODO: set up map physics
+  }
+  renderPlayers = () => {
     return this.state.players.map((v, idx) =>
       <Player value={v} key={idx} />
     )
@@ -15,7 +18,7 @@ export default class Game extends PureComponent {
   render() {
     return <Loop>
       <Stage>
-        <World>
+        <World onInit={this.initialize}>
           {this.renderPlayers()}
         </World>
       </Stage>
