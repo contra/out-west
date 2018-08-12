@@ -12,6 +12,7 @@ export default class Navigation extends PureComponent {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          flex-shrink: 0;
           color: white;
         }
         a {
@@ -19,7 +20,6 @@ export default class Navigation extends PureComponent {
           text-decoration: none;
           margin-right: 16px;
         }
-
         a:last-child {
           margin-right: 0;
         }
